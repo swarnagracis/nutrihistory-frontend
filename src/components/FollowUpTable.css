@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* FollowUpTable Component Specific Styles */
+.container {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  padding: 50px;
+}
+
+/* Layout Adjustments */
+.main-content {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Form and Table Side-by-Side */
+.form-table-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Form Section */
+.form-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%; /* increased by 10% */
+  margin-top: 40px;
+}
+
+.section-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* Form Fields */
+.follow-up-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.follow-up-form input, 
+.follow-up-form button,
+.follow-up-form select {
+  width: 40%;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+input:focus {
+  border-color: #6b6b6b;
+  outline: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.edit-button {
+  background-color: #007bff;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Table Section */
+.table-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%; /* increased by 10% */
+  margin-top: 40px;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.search-bar label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  flex: 1;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.follow-up-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.follow-up-table th, 
+.follow-up-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.follow-up-table th {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.follow-up-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.follow-up-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form-table-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section, .table-section {
+    width: 90%;
+  }
+
+  .follow-up-form input,
+  .follow-up-form button {
+    width: 100%;
+  }
+}

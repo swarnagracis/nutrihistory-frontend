@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  min-width: 320px;
+  height: 65px;
+  background-color: #cccccc; /* use full hex for clarity */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.25rem; /* 20px */
+  box-sizing: border-box;
+}
+
+.header-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px; /* 26px */
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logout-button {
+  padding: 0.625rem 1rem; /* 10px 16px */
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover,
+.logout-button:focus {
+  background-color: #a71d2a;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 55px;
+    padding: 0 1rem;
+  }
+
+  .header-title {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .logout-button {
+    padding: 0.5rem 0.875rem; /* 8px 14px */
+    font-size: 18px; /* 13px */
+  }
+}

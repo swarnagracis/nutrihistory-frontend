@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  margin: 20;
+  padding: 20;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 6px 10px;
+  width: 300px;
+  border-radius: 60px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 22%;
+  background-color: #ffffff;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hospital-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.divider {
+  margin-bottom: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  padding: 5px 0;
+}
+
+.section-header {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Form Section */
+.form-container {
+  flex: 1;
+  padding: 30px;
+  background-color: white;
+  overflow-y: auto;
+  font-size: 18px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Form Input Layout */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 150px;
+  font-weight: bold;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #efefef;
+  font-size: 18px;
+}
+
+.form-group select {
+  flex:1;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #efefef;
+  font-size: 14px;
+}
+
+/* Radio Button Group */
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.bmi-range {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.bmi-underweight {
+  color: #ff9800; /* Orange */
+}
+
+.bmi-normal {
+  color: #4caf50; /* Green */
+}
+
+.bmi-overweight {
+  color: #ffc107; /* Yellow-ish */
+}
+
+.bmi-obese {
+  color: #f44336; /* Red */
+}
+
+.clear-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background-color: #a71d2a;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Register Button */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+}

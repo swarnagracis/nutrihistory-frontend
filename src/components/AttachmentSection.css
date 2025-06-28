@@ -1,0 +1,61 @@
+.attachment-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .consultation-text {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .attachment-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .attachment-text {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .scan-button {
+    background-color: #cce3de;
+    border: 2px solid #000000;
+    border-radius: 29px;
+    padding: 8px 20px;
+    min-width: 98px;
+    height: 34px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scan-button span {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .scan-button:hover {
+    background-color: #b8d5cf;
+  }
+  
+  @media (max-width: 768px) {
+    .attachment-section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .attachment-container {
+      margin-top: 10px;
+    }
+  }
+  
+  
