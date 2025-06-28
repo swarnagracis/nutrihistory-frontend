@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { validateSignupForm } from './SignupValidation';
 import './Signup.css';
 import axios from 'axios';
+import BASE_URL from '../config';
 
 function Signup() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function Signup() {
     }
 
     try {
-      const { data } = await axios.post('http://localhost:5000/api/signup', formData);
+      const { data } = await axios.post(`${BASE_URL}/api/signup`, formData);
       alert(data.message);            // use data.message
       setFormErrors({});
       setFormData({ name: '', email: '', userId: '', password: '' });

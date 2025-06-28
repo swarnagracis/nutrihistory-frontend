@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import BASE_URL from '../config';
 
 
 const PatientRegistration = () => {
@@ -70,7 +71,7 @@ const PatientRegistration = () => {
       const payload = { ...formData,};
       delete payload.bmi;
 
-      await axios.post('http://localhost:5000/api/op-patients/patient-registration', payload);
+      await axios.post(`${BASE_URL}/api/op-patients/patient-registration`, payload);
       navigate('/nutritional-screening', {
         state: {
           HospNo: formData.HospNo,
@@ -93,7 +94,7 @@ const PatientRegistration = () => {
   const handleSearch = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:5000/api/op-patients/${searchValue.trim()}`
+      `${BASE_URL}/api/op-patients/${searchValue.trim()}`
     );
     // Make sure to use the correct format for HTML input
     const formatDateForInput = (dateString) => {

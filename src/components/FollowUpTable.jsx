@@ -5,6 +5,7 @@ import Header from './Header.jsx';
 import Sidebar from './Sidebar.jsx';
 import axios from 'axios';
 import { useMemo } from 'react';
+import BASE_URL from '../config';
 
 const FollowUpTable = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const FollowUpTable = () => {
   const fetchFollowUps = async (IPNo) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/follow-ups/patient/${IPNo}`);
+      const response = await axios.get(`${BASE_URL}/api/follow-ups/patient/${IPNo}`);
       setFollowUps(response.data.data);
       setError(null);
     } catch (err) {
@@ -49,7 +50,7 @@ const FollowUpTable = () => {
   const fetchAllFollowUps = async () => {
   try {
     setLoading(true);
-    const response = await axios.get(`http://localhost:5000/api/follow-ups`);
+    const response = await axios.get(`${BASE_URL}/api/follow-ups`);
     setFollowUps(response.data.data);
     setError(null);
   } catch (err) {
@@ -134,9 +135,9 @@ const FollowUpTable = () => {
 
     let response;
     if (isEditing) {
-      response = await axios.put(`http://localhost:5000/api/follow-ups/${formData.id}`, formDataToSend, config);
+      response = await axios.put(`${BASE_URL}/api/follow-ups/${formData.id}`, formDataToSend, config);
     } else {
-      response = await axios.post('http://localhost:5000/api/follow-ups', formDataToSend, config);
+      response = await axios.post(`${BASE_URL}/api/follow-ups`, formDataToSend, config);
     }
 
     if (response.data.success) {
@@ -329,7 +330,7 @@ const formatDate = (isoDate) => {
                         <td>
                           {followUp.attachment ? (
                             <a
-                              href={`http://localhost:5000/api/follow-ups/attachment/${followUp.attachment}`}
+                              href={`${BASE_URL}/api/follow-ups/attachment/${followUp.attachment}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="view-link"

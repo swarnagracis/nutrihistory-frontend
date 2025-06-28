@@ -3,6 +3,7 @@ import './LoginPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateLoginForm } from './LoginValidation';
 import axios from 'axios';
+import BASE_URL from '../config';
 
 const LoginPage = ({ defaultUserId = '', defaultPassword = '' }) => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const LoginPage = ({ defaultUserId = '', defaultPassword = '' }) => {
   if (!isValid) return setFormErrors(errors);
 
   try {
-    const response = await axios.post('http://localhost:5000/api/login', formData, {
+    const response = await axios.post(`${BASE_URL}/api/login`, formData, {
       timeout: 10000, // 10 second timeout
       headers: {
         'Content-Type': 'application/json'

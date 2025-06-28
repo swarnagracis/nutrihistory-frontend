@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import BASE_URL from '../config';
 
 const NutritionalScreening = () => {
   const location = useLocation();
@@ -136,7 +137,7 @@ const NutritionalScreening = () => {
   form.append("customFields", JSON.stringify(customFieldsPayload));
 
   try {
-    await axios.post("http://localhost:5000/api/op-screening/nutritional-screening", form);
+    await axios.post(`${BASE_URL}/api/op-screening/nutritional-screening`, form);
     alert("Data saved successfully!");
     navigate("/summary", { state: { formData, bmiRange } });
   } catch (error) {
@@ -156,7 +157,7 @@ const formatDateForInput = (dateString) => {
 
 const handleSearch = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/op-screening/${searchValue}`);
+    const response = await axios.get(`${BASE_URL}/api/op-screening/${searchValue}`);
     const { screening, customFields } = response.data;
 
     const formattedDate = screening.date ? formatDateForInput(screening.date) : '';
@@ -415,7 +416,7 @@ const handleSearch = async () => {
               <div className="form-group">
                 <label>Attached Report:</label>
                 <a
-                  href={`http://localhost:5000/uploads/op_reports/${formData.report_path}`}
+                  href={`${BASE_URL}/uploads/op_reports/${formData.report_path}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="download-link"

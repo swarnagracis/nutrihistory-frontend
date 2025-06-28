@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import BASE_URL from '../config';
 
 const IPNutritionalScreening = () => {
   const navigate = useNavigate();
@@ -114,7 +115,7 @@ const getBmiRange = (bmi) => {
 
   const handleSearch = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/ipnutritional-screening/${searchValue}`);
+    const response = await axios.get(`${BASE_URL}/api/ipnutritional-screening/${searchValue}`);
     const { screening, customFields } = response.data;
 
     const formattedDate = screening.date ? formatDateForInput(screening.date) : '';
@@ -239,7 +240,7 @@ const updatedForm = {
 
     // 3. Make the request with proper headers
     const response = await axios.post(
-      "http://localhost:5000/api/ipnutritional-screening/ip-nutritional-screening",
+      `${BASE_URL}/api/ipnutritional-screening/ip-nutritional-screening`,
       submissionData,
       {
         headers: {
@@ -667,7 +668,7 @@ const handleClearForm = () => {
                 {formData.attachment_path && typeof formData.attachment_path === 'string' && (
                   <div style={{ marginTop: '8px' }}>
                     <a
-                      href={`http://localhost:5000/${formData.attachment_path.replace(/\\/g, '/')}`}
+                      href={`${BASE_URL}/${formData.attachment_path.replace(/\\/g, '/')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="view-link"
